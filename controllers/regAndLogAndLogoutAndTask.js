@@ -130,6 +130,7 @@ export const removeTaskHandler = async (req,res) => {
     const {data} = await axios.get(url + `/api/v1/users/me?id=${_id}`);
     const information = await (await axios.get(url + `/api/v1/task/all?data=${_id}`)).data
     const {tasks} = information;
+    console.log(_id);
     _id = tasks[index]._id
     await axios.delete(url + `/api/v1/task/${_id}`);
     res.redirect(`/logout?data=${data.data.name}`);

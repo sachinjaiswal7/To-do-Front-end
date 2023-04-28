@@ -9,6 +9,7 @@ import taskRouter from "./routes/taskRouting.js"
 
 
 
+const url = 'https://nodejs-todoapp-frontend.onrender.com'
 const app = express();
 // middlewares
 app.use(express.urlencoded({extended : true}))
@@ -19,8 +20,8 @@ dotenv.config({
 })
 
 // routers
-app.use("/",authRouter)
-app.use("/",taskRouter)
+app.use(url,authRouter)
+app.use(url,taskRouter)
 
 
 app.get("/" , (req, res) => {
