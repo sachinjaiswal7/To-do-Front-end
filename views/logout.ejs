@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/taskShowing.css">
+</head>
+<body>
+        <div id="navBar">
+            <div id="navBarLeft">
+                <h1>HI <%= locals.data %></h1>
+            </div>
+            <div id="navBarRight">
+                <form id="navForm" action="/logout" method="post">
+                    
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
+        </div>
+        <div id="taskBody" >
+            <form method="post" action="/addTask">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" maxlength="100" required style="margin-top: 2px;">
+                <br><br>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" maxlength="500" required style="margin-top: 2px;"></textarea>
+                <br><br>
+                <button id="addTask" type="submit">
+                  <span>+</span>
+                  Add
+                </button>
+              </form>
+              
+        </div>
+       <hr>
+        <div id="realTask" >
+            <% if(locals.tasks && locals.tasks.length > 0)  { %>
+                <% for(let i = locals.tasks.length-1;i >= 0;i--) { %>
+                    <div class="task-card">
+                       
+                        <div class="realTaskCardRight">
+                            <h2 class="task-title"><%= locals.tasks[i].title %></h2>
+                            <p class="task-description" style="overflow-wrap: break-word;"><%= locals.tasks[i].description %></p>
+                            <button class="delete-btn" onclick="remove(<%= i %>)">X</i></button>
+                        </div>
+                    </div>
+          <% } %>
+          
+        <% } else {%>
+            <div style="text-align: center;">NO Tasks Added Yet</div>
+        <% } %>   
+      
+    </div>
+
+          <!-- for showing error -->
+          <% if(locals.msg) { %>
+            <div id="my-message" class="message">
+                <span id="message-text"> <%= locals.msg%></span>
+              
+              </div>
+              <% } %>
+              
+        
+           <script>
+            // Show the message
+        
+            const message = document.getElementById("my-message");
+            if(message != null){
+            document.body.addEventListener("click", () => {
+                message.style.display = "none";
+            })
+            }
+
+            function remove(i){
+                window.location.href = `http://localhost:8384/removeTask?index=${i}`
+            }
+        
+           </script>
+</body>
+</html>

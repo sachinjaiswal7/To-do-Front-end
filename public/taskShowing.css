@@ -1,0 +1,151 @@
+/* Style the form */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#navBar{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #eee;
+  padding: 0.1%;
+  margin-right: 2%;
+  align-items: center;
+}
+
+#navBarRight{
+  margin-right : 1%
+}
+
+/* #realTask{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+} */
+
+body{
+  font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  font-weight: bold; 
+  text-transform: uppercase;
+  letter-spacing: 1px; 
+  color: #333;
+  padding: 10px; 
+  
+}
+
+
+/* Style the input fields */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  resize: none;
+}
+
+/* Style the button */
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #2E8B57;
+}
+
+/* Style the plus icon */
+button[type="submit"] span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-right: 10px;
+}
+
+
+#taskBody{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+
+.task-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  position: relative;
+  margin-top: 1%;
+  display: flex;
+  /* justify-content: s; */
+}
+
+.task-title {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.task-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+.fa-times {
+  color: #000;
+}
+
+.fa-times:hover {
+  color: red;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+
+input[type="checkbox"]:hover {
+  background-color: #f5f5f5;
+}
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/regAndLog.css">
+    
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="name" required placeholder="Write Yer Name">
+        <input type="email"  name = "email" required placeholder="Write Yer Email">
+        <input type="password" name = "password" required placeholder="Set a password">
+        <button type="submit" >Register Now</button>
+    </form>
+    <form action="/login" >
+        <button type="submit">Login First</button>
+    </form>
+    <% if(locals.msg) { %>
+    <div id="my-message" class="message">
+        <span id="message-text"> <%= locals.msg%></span>
+      
+      </div>
+      <% } %>
+      
+
+   <script>
+    // Show the message
+
+    const message = document.getElementById("my-message");
+    if(message != null){
+    document.body.addEventListener("click", () => {
+        message.style.display = "none";
+    })
+    }
+
+   </script>
+    
+</body>
+</html>
