@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import axios from "axios";
 import { createCookie } from "../utils/createCookie.js"
 
-const url = 'http://localhost:3000'
+const url = 'https://nodejs-todoapp-z0qr.onrender.com'
 
 
 
