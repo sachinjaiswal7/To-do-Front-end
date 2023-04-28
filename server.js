@@ -20,8 +20,8 @@ dotenv.config({
 })
 
 // routers
-app.use(url,authRouter)
-app.use(url,taskRouter)
+app.use("/",authRouter)
+app.use("/",taskRouter)
 
 
 app.get("/" , (req, res) => {
